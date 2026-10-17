@@ -1,228 +1,222 @@
-/* =========================================================
+
+/* =====================================================
    POSITIVE PARENTING WEBSITE
-   JAVASCRIPT
-   ========================================================= */
+   AVISHKAR Competition 2026–2027
+   Main JavaScript
+===================================================== */
+
+document.addEventListener("DOMContentLoaded", () => {
+
+  /* ===================================================
+     1. MOBILE NAVIGATION
+  =================================================== */
+
+  const navToggle = document.querySelector(".nav-toggle");
+  const mainNav = document.querySelector(".main-nav");
+
+  if (navToggle && mainNav) {
+
+    const openMenu = () => {
+      mainNav.classList.add("open");
+      navToggle.setAttribute("aria-expanded", "true");
+      navToggle.setAttribute("aria-label", "Close navigation");
+    };
+
+    const closeMenu = () => {
+      mainNav.classList.remove("open");
+      navToggle.setAttribute("aria-expanded", "false");
+      navToggle.setAttribute("aria-label", "Open navigation");
+    };
+
+    navToggle.addEventListener("click", () => {
+      const isOpen = mainNav.classList.contains("open");
+
+      if (isOpen) {
+        closeMenu();
+      } else {
+        openMenu();
+      }
+    });
+
+    // Close the menu after a navigation link is selected.
+    mainNav.querySelectorAll("a").forEach((link) => {
+      link.addEventListener("click", closeMenu);
+    });
+
+    // Close the menu when the user clicks outside it.
+    document.addEventListener("click", (event) => {
+      const clickedInsideMenu = mainNav.contains(event.target);
+      const clickedToggle = navToggle.contains(event.target);
+
+      if (!clickedInsideMenu && !clickedToggle) {
+        closeMenu();
+      }
+    });
+
+    // Allow keyboard users to close the menu with Escape.
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape") {
+        closeMenu();
+      }
+    });
+
+    // Close the mobile menu when returning to desktop layout.
+    window.addEventListener("resize", () => {
+      if (window.innerWidth > 760) {
+        closeMenu();
+      }
+    });
+
+  }
 
 
-document.addEventListener("DOMContentLoaded", function () {
+  /* ===================================================
+     2. SIX INTERACTIVE PARENTING SCENARIOS
 
+     Each card is a native HTML button.
 
-    /* =====================================================
-       MOBILE NAVIGATION
-       ===================================================== */
+     One click:
+       - Reveals its answer.
+       - Updates aria-expanded.
+       - Adds the is-open styling.
+       - Updates the instruction text.
 
-    const navToggle = document.querySelector(".nav-toggle");
-    const mainNav = document.querySelector(".main-nav");
+     Another click:
+       - Hides the answer again.
 
-    if (navToggle && mainNav) {
+     IMPORTANT:
+     Do not add a second scenario-card click listener
+     in the HTML or another JavaScript file.
+  =================================================== */
 
-        navToggle.addEventListener("click", function () {
+  const scenarioCards = document.querySelectorAll(".scenario-card");
 
-            mainNav.classList.toggle("open");
+  scenarioCards.forEach((card) => {
 
-        });
+    const answer = card.querySelector(".scenario-answer");
+    const hint = card.querySelector(".scenario-hint");
 
-
-        const navLinks = mainNav.querySelectorAll("a");
-
-        navLinks.forEach(function (link) {
-
-            link.addEventListener("click", function () {
-
-                mainNav.classList.remove("open");
-
-            });
-
-        });
-
+    // Skip a card if its answer element is missing.
+    if (!answer) {
+      return;
     }
 
+    // Ensure each card begins in the closed state.
+    answer.hidden = true;
+    card.classList.remove("is-open");
+    card.setAttribute("aria-expanded", "false");
 
-    /* =====================================================
-       REVEAL ANIMATION
-       ===================================================== */
-
-    const revealElements = document.querySelectorAll(".reveal");
-
-    if ("IntersectionObserver" in window) {
-
-        const observer = new IntersectionObserver(
-            function (entries, observerInstance) {
-
-                entries.forEach(function (entry) {
-
-                    if (entry.isIntersecting) {
-
-                        entry.target.classList.add("visible");
-
-                        observerInstance.unobserve(entry.target);
-
-                    }
-
-                });
-
-            },
-            {
-                threshold: 0.12
-            }
-        );
-
-
-        revealElements.forEach(function (element) {
-
-            observer.observe(element);
-
-        });
-
-    } else {
-
-        revealElements.forEach(function (element) {
-
-            element.classList.add("visible");
-
-        });
-
+    if (hint) {
+      hint.textContent = "↗ Tap to reveal the answer";
     }
 
+    // This is the ONLY click listener needed per card.
+    card.addEventListener("click", () => {
 
-    /* =====================================================
-       RESEARCH COUNTER
-       ===================================================== */
+      const isCurrentlyOpen =
+        card.getAttribute("aria-expanded") === "true";
 
-    const counters = document.querySelectorAll(".stat-number");
+      const shouldOpen = !isCurrentlyOpen;
 
-    function animateCounter(element) {
+      // Show or hide the answer.
+      answer.hidden = !shouldOpen;
 
-        const target = Number(
-            element.getAttribute("data-target")
-        );
+      // Update accessibility state.
+      card.setAttribute("aria-expanded", String(shouldOpen));
 
-        let current = 0;
+      // Update the visual card state.
+      card.classList.toggle("is-open", shouldOpen);
 
-        const duration = 1400;
-
-        const startTime = performance.now();
-
-
-        function updateCounter(currentTime) {
-
-            const elapsed = currentTime - startTime;
-
-            const progress = Math.min(
-                elapsed / duration,
-                1
-            );
-
-            const easedProgress =
-                1 - Math.pow(1 - progress, 3);
-
-            current = Math.floor(
-                target * easedProgress
-            );
-
-            element.textContent = current;
-
-            if (progress < 1) {
-
-                requestAnimationFrame(updateCounter);
-
-            } else {
-
-                element.textContent = target;
-
-            }
-
-        }
-
-
-        requestAnimationFrame(updateCounter);
-
-    }
-
-
-    if ("IntersectionObserver" in window) {
-
-        const counterObserver = new IntersectionObserver(
-            function (entries, observerInstance) {
-
-                entries.forEach(function (entry) {
-
-                    if (entry.isIntersecting) {
-
-                        animateCounter(entry.target);
-
-                        observerInstance.unobserve(entry.target);
-
-                    }
-
-                });
-
-            },
-            {
-                threshold: 0.5
-            }
-        );
-
-
-        counters.forEach(function (counter) {
-
-            counterObserver.observe(counter);
-
-        });
-
-    }
-
-
-    /* =====================================================
-       CLOSE MOBILE MENU WHEN CLICKING OUTSIDE
-       ===================================================== */
-
-    document.addEventListener("click", function (event) {
-
-        if (!mainNav || !navToggle) {
-            return;
-        }
-
-        const clickedInsideNav =
-            mainNav.contains(event.target);
-
-        const clickedToggle =
-            navToggle.contains(event.target);
-
-        if (
-            !clickedInsideNav &&
-            !clickedToggle
-        ) {
-
-            mainNav.classList.remove("open");
-
-        }
+      // Update the instruction displayed to the viewer.
+      if (hint) {
+        hint.textContent = shouldOpen
+          ? "↩ Tap to hide the answer"
+          : "↗ Tap to reveal the answer";
+      }
 
     });
 
+  });
 
-    /* =====================================================
-       REDUCED MOTION SUPPORT
-       ===================================================== */
 
-    const reducedMotion =
-        window.matchMedia(
-            "(prefers-reduced-motion: reduce)"
-        );
+  /* ===================================================
+     3. SCROLL REVEAL SUPPORT
 
-    if (reducedMotion.matches) {
+     Elements with the .reveal class become visible
+     when they enter the viewport.
 
-        document.documentElement.style.scrollBehavior =
-            "auto";
+     If IntersectionObserver is unavailable, the
+     content remains visible rather than disappearing.
+  =================================================== */
 
-        revealElements.forEach(function (element) {
+  const revealElements = document.querySelectorAll(".reveal");
 
-            element.style.transition = "none";
+  const reducedMotion = window.matchMedia(
+    "(prefers-reduced-motion: reduce)"
+  ).matches;
 
-            element.classList.add("visible");
+  if (
+    reducedMotion ||
+    !("IntersectionObserver" in window)
+  ) {
+
+    revealElements.forEach((element) => {
+      element.classList.add("visible");
+    });
+
+  } else {
+
+    const revealObserver = new IntersectionObserver(
+      (entries, observer) => {
+
+        entries.forEach((entry) => {
+
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+            observer.unobserve(entry.target);
+          }
 
         });
 
-    }
+      },
+      {
+        threshold: 0.12,
+        rootMargin: "0px 0px -30px 0px"
+      }
+    );
+
+    revealElements.forEach((element) => {
+      revealObserver.observe(element);
+    });
+
+  }
+
+
+  /* ===================================================
+     4. AUTOMATIC COPYRIGHT YEAR
+
+     Add data-current-year to any HTML element if you
+     want the current year to appear automatically.
+  =================================================== */
+
+  const yearElements = document.querySelectorAll(
+    "[data-current-year]"
+  );
+
+  yearElements.forEach((element) => {
+    element.textContent = new Date().getFullYear();
+  });
+
+
+  /* ===================================================
+     5. EXTERNAL LINK SECURITY
+
+     Add safe rel attributes to links opening in a
+     separate browser tab.
+  =================================================== */
+
+  document.querySelectorAll('a[target="_blank"]').forEach((link) => {
+    link.setAttribute("rel", "noopener noreferrer");
+  });
 
 });
