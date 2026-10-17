@@ -1,287 +1,529 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#fff7f5">
+  <meta name="description" content="Explore practical positive parenting tips and six interactive scenarios about supporting children's health, emotions and well-being.">
 
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Positive Parenting Tips | Real-Life Scenarios</title>
 
-    <title>Positive Parenting Tips</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
-
-    <link rel="stylesheet" href="style.css">
-
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<header class="site-header">
-
+  <header class="site-header">
     <div class="container nav-wrap">
 
-        <a href="index.html" class="brand">
-            <span class="brand-mark">♡</span>
-            <span>Positive Parenting</span>
-        </a>
+      <a class="brand" href="index.html" aria-label="Positive Parenting home">
+        <span class="brand-mark">♡</span>
+        <span>Positive Parenting</span>
+      </a>
 
-        <button class="nav-toggle" aria-label="Open navigation">
-            <span></span>
-            <span></span>
-            <span></span>
-        </button>
+      <button
+        class="nav-toggle"
+        type="button"
+        aria-label="Open navigation"
+        aria-expanded="false"
+        aria-controls="main-navigation"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
 
-        <nav class="main-nav">
-
-            <a href="index.html">Home</a>
-            <a href="understanding.html">Understanding</a>
-            <a href="impact.html">Impact</a>
-            <a href="parenting-tips.html" class="active">Parenting Tips</a>
-            <a href="research.html">Research</a>
-
-        </nav>
+      <nav class="main-nav" id="main-navigation" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="understanding.html">Understanding</a>
+        <a href="impact.html">Impact</a>
+        <a href="parenting-tips.html" class="active" aria-current="page">Parenting Tips</a>
+        <a href="research.html">Research</a>
+      </nav>
 
     </div>
+  </header>
 
-</header>
+  <main>
 
+    <!-- PAGE INTRODUCTION -->
 
-<main>
+    <section class="page-hero">
+      <div class="container page-hero-grid">
 
-    <section class="page-hero section">
+        <div class="page-hero-content">
+          <span class="eyebrow">Small changes, meaningful differences</span>
 
-        <div class="container">
+          <h1>
+            Parenting with
+            <span>patience and care.</span>
+          </h1>
 
-            <span class="eyebrow">Everyday parenting</span>
+          <p class="hero-intro">
+            Children do not always know how to explain what they feel.
+            Sometimes they need patience, reassurance and guidance more
+            than criticism.
+          </p>
 
-            <h1>
-                Simple habits,
-                <span>meaningful impact.</span>
-            </h1>
+          <p class="hero-intro">
+            Explore practical ways to respond to everyday challenges while
+            maintaining loving relationships and clear boundaries.
+          </p>
 
-            <p class="large-intro">
-                Positive parenting can begin with small changes in
-                everyday conversations and routines.
+          <a class="primary-button" href="#interactive-scenarios">
+            Try the six scenarios <span aria-hidden="true">↗</span>
+          </a>
+        </div>
+
+        <div class="page-hero-image">
+          <img
+            src="images/goodparenting.jpeg"
+            alt="Parents sharing a happy, caring moment with their young child at home"
+            fetchpriority="high"
+          >
+
+          <p class="image-caption">
+            A little patience today can create a safer space for tomorrow.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- PRACTICAL TIPS -->
+
+    <section class="section soft-section">
+      <div class="container">
+
+        <div class="section-heading centered">
+          <span class="eyebrow">Everyday parenting</span>
+          <h2>Five habits worth practising</h2>
+
+          <p>
+            Positive parenting grows through small, repeated actions.
+            Start with what is realistic for your family.
+          </p>
+        </div>
+
+        <div class="three-card-grid">
+
+          <article class="info-card pink-card">
+            <div class="icon-circle" aria-hidden="true">♡</div>
+            <span class="small-label">01 · Listen</span>
+            <h3>Listen before reacting</h3>
+            <p>
+              Give your child a chance to explain what happened. Ask questions
+              with curiosity instead of immediately assuming the worst.
+            </p>
+          </article>
+
+          <article class="info-card peach-card">
+            <div class="icon-circle" aria-hidden="true">☁</div>
+            <span class="small-label">02 · Understand</span>
+            <h3>Acknowledge feelings</h3>
+            <p>
+              You can recognise sadness, anger or disappointment without
+              agreeing with every behaviour that follows those emotions.
+            </p>
+          </article>
+
+          <article class="info-card lavender-card">
+            <div class="icon-circle" aria-hidden="true">✿</div>
+            <span class="small-label">03 · Encourage</span>
+            <h3>Praise effort and progress</h3>
+            <p>
+              Notice persistence, honesty, improvement and the courage
+              to try again after a mistake.
+            </p>
+          </article>
+
+          <article class="info-card lavender-card">
+            <div class="icon-circle" aria-hidden="true">◎</div>
+            <span class="small-label">04 · Guide</span>
+            <h3>Set clear boundaries</h3>
+            <p>
+              Explain reasonable expectations and consequences calmly.
+              Consistency helps children understand what is expected.
+            </p>
+          </article>
+
+          <article class="info-card pink-card">
+            <div class="icon-circle" aria-hidden="true">☀</div>
+            <span class="small-label">05 · Connect</span>
+            <h3>Make time for connection</h3>
+            <p>
+              Share conversations, play and quiet moments together.
+              Let children know that they can come to you when something
+              is worrying them.
+            </p>
+          </article>
+
+          <article class="info-card peach-card">
+            <div class="icon-circle" aria-hidden="true">↺</div>
+            <span class="small-label">A reminder</span>
+            <h3>Repair after difficult moments</h3>
+            <p>
+              If you react harshly, acknowledge it, apologise when appropriate
+              and explain how you will try to respond differently next time.
+            </p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- INTERACTIVE QUESTIONS -->
+
+    <section class="section" id="interactive-scenarios">
+      <div class="container">
+
+        <div class="section-heading">
+          <span class="eyebrow">Think · Choose · Learn</span>
+
+          <h2>What would you do in these situations?</h2>
+
+          <p>
+            Parenting decisions often happen in ordinary moments.
+            Tap any question card to reveal a possible response and
+            understand the difference supportive guidance can make.
+          </p>
+        </div>
+
+        <div class="scenario-legend">
+          <span class="legend-item">
+            <span class="legend-dot positive-dot"></span>
+            Supportive response
+          </span>
+
+          <span class="legend-item">
+            <span class="legend-dot negative-dot"></span>
+            A response to reconsider
+          </span>
+        </div>
+
+        <div class="scenario-grid">
+
+          <!-- SCENARIO 1 -->
+
+          <button
+            class="scenario-card positive-scenario"
+            type="button"
+            aria-expanded="false"
+            aria-controls="scenario-answer-1"
+          >
+            <span class="scenario-number">
+              <span>SCENARIO 01</span>
+              <span class="scenario-status">Supportive approach</span>
+            </span>
+
+            <span class="scenario-question">
+              Your child scores poorly on a test. What should you do?
+            </span>
+
+            <span class="scenario-quote">
+              Your child looks disappointed and is afraid to show you
+              the result.
+            </span>
+
+            <span class="scenario-hint">
+              <span aria-hidden="true">↗</span>
+              Tap to reveal the answer
+            </span>
+
+            <span class="scenario-answer" id="scenario-answer-1" hidden>
+              <span class="answer-heading">Respond with understanding</span>
+
+              <span class="answer-text">
+                Acknowledge the disappointment first. Then discuss what
+                was difficult, identify areas for improvement and make
+                a manageable study plan together.
+              </span>
+
+              <span class="answer-phrase">
+                Try saying: “One test doesn't define you. Let's see what
+                we can learn from it.”
+              </span>
+            </span>
+          </button>
+
+          <!-- SCENARIO 2 -->
+
+          <button
+            class="scenario-card negative-scenario"
+            type="button"
+            aria-expanded="false"
+            aria-controls="scenario-answer-2"
+          >
+            <span class="scenario-number">
+              <span>SCENARIO 02</span>
+              <span class="scenario-status">Reconsider</span>
+            </span>
+
+            <span class="scenario-question">
+              Your child makes a mistake. Should you compare them with others?
+            </span>
+
+            <span class="scenario-quote">
+              You feel frustrated because another child seems to be doing
+              better.
+            </span>
+
+            <span class="scenario-hint">
+              <span aria-hidden="true">↗</span>
+              Tap to reveal the answer
+            </span>
+
+            <span class="scenario-answer" id="scenario-answer-2" hidden>
+              <span class="answer-heading">Focus on individual growth</span>
+
+              <span class="answer-text">
+                Avoid using siblings, friends or classmates as a measure
+                of your child's worth. Discuss the mistake and help your
+                child choose one practical step to improve.
+              </span>
+
+              <span class="answer-phrase">
+                Try saying: “Let's focus on your progress and what you
+                can do next.”
+              </span>
+            </span>
+          </button>
+
+          <!-- SCENARIO 3 -->
+
+          <button
+            class="scenario-card positive-scenario"
+            type="button"
+            aria-expanded="false"
+            aria-controls="scenario-answer-3"
+          >
+            <span class="scenario-number">
+              <span>SCENARIO 03</span>
+              <span class="scenario-status">Supportive approach</span>
+            </span>
+
+            <span class="scenario-question">
+              Your child feels anxious before an important exam. How can you help?
+            </span>
+
+            <span class="scenario-quote">
+              Your child keeps worrying about disappointing the family.
+            </span>
+
+            <span class="scenario-hint">
+              <span aria-hidden="true">↗</span>
+              Tap to reveal the answer
+            </span>
+
+            <span class="scenario-answer" id="scenario-answer-3" hidden>
+              <span class="answer-heading">Offer reassurance and structure</span>
+
+              <span class="answer-text">
+                Listen to the worries without dismissing them. Help your
+                child break revision into smaller tasks, take appropriate
+                breaks and maintain a reasonable sleep routine.
+              </span>
+
+              <span class="answer-phrase">
+                Try saying: “I care about you, not just your result.
+                Let's take this one step at a time.”
+              </span>
+            </span>
+          </button>
+
+          <!-- SCENARIO 4 -->
+
+          <button
+            class="scenario-card negative-scenario"
+            type="button"
+            aria-expanded="false"
+            aria-controls="scenario-answer-4"
+          >
+            <span class="scenario-number">
+              <span>SCENARIO 04</span>
+              <span class="scenario-status">Reconsider</span>
+            </span>
+
+            <span class="scenario-question">
+              Your child gets angry and refuses to talk. Should you dismiss their feelings?
+            </span>
+
+            <span class="scenario-quote">
+              Your child is upset and struggles to explain what is wrong.
+            </span>
+
+            <span class="scenario-hint">
+              <span aria-hidden="true">↗</span>
+              Tap to reveal the answer
+            </span>
+
+            <span class="scenario-answer" id="scenario-answer-4" hidden>
+              <span class="answer-heading">Make room for emotions</span>
+
+              <span class="answer-text">
+                If everyone is safe, allow a little time to settle down.
+                Let your child know you are available to listen, while
+                keeping appropriate boundaries around harmful behaviour.
+              </span>
+
+              <span class="answer-phrase">
+                Try saying: “I can see you're upset. We can talk when
+                you're ready.”
+              </span>
+            </span>
+          </button>
+
+          <!-- SCENARIO 5 -->
+
+          <button
+            class="scenario-card positive-scenario"
+            type="button"
+            aria-expanded="false"
+            aria-controls="scenario-answer-5"
+          >
+            <span class="scenario-number">
+              <span>SCENARIO 05</span>
+              <span class="scenario-status">Supportive approach</span>
+            </span>
+
+            <span class="scenario-question">
+              Your child tries something new but doesn't succeed. What matters most?
+            </span>
+
+            <span class="scenario-quote">
+              Your child wants to give up after making several mistakes.
+            </span>
+
+            <span class="scenario-hint">
+              <span aria-hidden="true">↗</span>
+              Tap to reveal the answer
+            </span>
+
+            <span class="scenario-answer" id="scenario-answer-5" hidden>
+              <span class="answer-heading">Celebrate effort and learning</span>
+
+              <span class="answer-text">
+                Recognise the courage it took to try. Help your child
+                identify what they learned, offer support if needed
+                and encourage another attempt when they feel ready.
+              </span>
+
+              <span class="answer-phrase">
+                Try saying: “You gave it a try, and that matters.
+                What would you like to try differently next time?”
+              </span>
+            </span>
+          </button>
+
+          <!-- SCENARIO 6 -->
+
+          <button
+            class="scenario-card negative-scenario"
+            type="button"
+            aria-expanded="false"
+            aria-controls="scenario-answer-6"
+          >
+            <span class="scenario-number">
+              <span>SCENARIO 06</span>
+              <span class="scenario-status">Reconsider</span>
+            </span>
+
+            <span class="scenario-question">
+              Your child tells you about a problem. Should you immediately blame them?
+            </span>
+
+            <span class="scenario-quote">
+              Your child admits to making a poor decision and expects
+              you to become angry.
+            </span>
+
+            <span class="scenario-hint">
+              <span aria-hidden="true">↗</span>
+              Tap to reveal the answer
+            </span>
+
+            <span class="scenario-answer" id="scenario-answer-6" hidden>
+              <span class="answer-heading">Listen, then guide</span>
+
+              <span class="answer-text">
+                Hear the full story before deciding how to respond.
+                Help your child understand the consequences, take
+                responsibility and consider safer or more respectful
+                choices for the future.
+              </span>
+
+              <span class="answer-phrase">
+                Try saying: “Thank you for telling me. Let's understand
+                what happened and work out how to put it right.”
+              </span>
+            </span>
+          </button>
+
+        </div>
+
+        <p class="scenario-footnote">
+          These are educational examples, not one-size-fits-all answers.
+          The best response depends on the child's age, circumstances,
+          safety and individual needs.
+        </p>
+
+      </div>
+    </section>
+
+    <!-- FINAL MESSAGE -->
+
+    <section class="section soft-section">
+      <div class="container">
+
+        <div class="message-box closing-message">
+          <span class="message-symbol" aria-hidden="true">♡</span>
+
+          <div>
+            <span class="eyebrow">A gentle reminder</span>
+
+            <h2>Connection before correction.</h2>
+
+            <p>
+              Children still need boundaries and guidance. When those
+              boundaries are communicated with care, children can learn
+              while feeling respected and supported.
             </p>
 
-
-            <div class="tips-grid">
-
-                <article class="tip-card large-tip">
-
-                    <div class="tip-icon">♡</div>
-
-                    <span class="small-label">LISTEN</span>
-
-                    <h2>Listen Before Reacting</h2>
-
-                    <p>
-                        Pause and understand what the child is trying
-                        to communicate before immediately correcting them.
-                    </p>
-
-                    <div class="tip-example">
-                        <span>Try:</span>
-                        “Tell me what happened.”
-                    </div>
-
-                </article>
-
-
-                <article class="tip-card">
-
-                    <div class="tip-icon">☁</div>
-
-                    <span class="small-label">COMMUNICATE</span>
-
-                    <h3>Communicate Calmly</h3>
-
-                    <p>
-                        A calm voice can make difficult conversations
-                        feel safer.
-                    </p>
-
-                </article>
-
-
-                <article class="tip-card">
-
-                    <div class="tip-icon">✦</div>
-
-                    <span class="small-label">ENCOURAGE</span>
-
-                    <h3>Praise Effort</h3>
-
-                    <p>
-                        Notice persistence and improvement, not only
-                        the final result.
-                    </p>
-
-                </article>
-
-
-                <article class="tip-card">
-
-                    <div class="tip-icon">☀</div>
-
-                    <span class="small-label">CONNECT</span>
-
-                    <h3>Give Time</h3>
-
-                    <p>
-                        Shared conversations, play and routines create
-                        opportunities for connection.
-                    </p>
-
-                </article>
-
-
-                <article class="tip-card">
-
-                    <div class="tip-icon">♡</div>
-
-                    <span class="small-label">ROUTINE</span>
-
-                    <h3>Create Predictability</h3>
-
-                    <p>
-                        Consistent routines can help children understand
-                        what to expect.
-                    </p>
-
-                </article>
-
-
-                <article class="tip-card">
-
-                    <div class="tip-icon">✧</div>
-
-                    <span class="small-label">MODEL</span>
-
-                    <h3>Show Calm Behaviour</h3>
-
-                    <p>
-                        Children learn from how adults handle emotions
-                        and disagreements.
-                    </p>
-
-                </article>
-
-            </div>
-
+            <a class="text-link" href="research.html">
+              Explore trusted research and resources ↗
+            </a>
+          </div>
         </div>
 
+      </div>
     </section>
 
+  </main>
 
-    <!-- BEFORE / AFTER -->
-    <section class="section soft-section">
-
-        <div class="container">
-
-            <div class="section-heading centered">
-
-                <span class="eyebrow">A small shift</span>
-
-                <h2>
-                    Same situation. Different response.
-                </h2>
-
-            </div>
-
-
-            <div class="response-grid">
-
-                <div class="response-card avoid">
-
-                    <span class="response-label">INSTEAD OF</span>
-
-                    <div class="response-icon">!</div>
-
-                    <h3>“Why can't you do this properly?”</h3>
-
-                    <p>
-                        Focuses on the mistake and may increase pressure.
-                    </p>
-
-                </div>
-
-
-                <div class="response-arrow">
-                    →
-                </div>
-
-
-                <div class="response-card positive">
-
-                    <span class="response-label">TRY</span>
-
-                    <div class="response-icon">♡</div>
-
-                    <h3>“Let's see where you got stuck.”</h3>
-
-                    <p>
-                        Opens the conversation and creates space for guidance.
-                    </p>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <section class="section">
-
-        <div class="container">
-
-            <div class="closing-note">
-
-                <span class="eyebrow">Remember</span>
-
-                <h2>
-                    Connection first.
-                    Correction with care.
-                </h2>
-
-                <p>
-                    The goal is not perfect parenting.
-                    The goal is a healthier relationship between
-                    children and the adults who care for them.
-                </p>
-
-            </div>
-
-        </div>
-
-    </section>
-
-</main>
-
-
-<footer class="site-footer">
-
+  <footer class="site-footer">
     <div class="container footer-inner">
 
-        <div>
-            <strong>Positive Parenting</strong>
-            <p>Small care. Stronger childhoods.</p>
-        </div>
+      <a class="brand footer-brand" href="index.html">
+        <span class="brand-mark">♡</span>
+        <span>Positive Parenting</span>
+      </a>
 
-        <div class="footer-note">
-            Listen • Guide • Encourage • Connect
-        </div>
+      <p class="footer-note">
+        Less Pressure, More Care — Building a Healthier and Happier Childhood.
+      </p>
+
+      <p class="footer-note">
+        AVISHKAR Competition 2026–2027
+      </p>
 
     </div>
+  </footer>
 
-</footer>
-
-
-<script src="script.js"></script>
-
+  <script src="script.js"></script>
 </body>
 </html>
